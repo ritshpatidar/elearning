@@ -29,6 +29,7 @@
                     name="username" 
                     ngModel 
                     required 
+                    email="true"
                     #username="ngModel"
                     id="loginUsername" 
                     class="form-control form-control-lg"  
@@ -66,7 +67,7 @@
 
                   <div class="pt-1 mb-3">
                     <button class="btn btn-dark btn-lg btn-block" style="font-size: 14px;" type="submit" 
-                    [disabled] = "f.invalid"
+                    [disabled] = "f.invalid" 
                     >Login</button>
                   </div>
 
