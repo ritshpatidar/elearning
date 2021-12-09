@@ -1,0 +1,9 @@
+ul li{
+    list-style: none;
+}
+
+.mat-toolbar.mat-primary {
+  background: #2F056B;
+  color: #fff;
+  size: 10px;
+}
