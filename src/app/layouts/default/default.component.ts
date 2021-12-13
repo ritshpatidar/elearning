@@ -16,6 +16,5 @@ export class DefaultComponent implements OnInit {
   sideBarToggler() {
     this.SideBarOpen = !this.SideBarOpen;
   }
-  
 
 }

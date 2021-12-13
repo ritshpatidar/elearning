@@ -1,5 +1,6 @@
 .default{
   background-image: linear-gradient(#E2E6EA, #2F056B);
+  height: 100vh;
 }
 
 .card
@@ -18,4 +19,8 @@
   font-size: 50px;
   font-weight: 600;
   color: black;
+}
+
+.form-control{
+  font-size: 14px;
 }

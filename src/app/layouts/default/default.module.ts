@@ -7,6 +7,11 @@ import { PostsComponent } from 'src/app/modules/posts/posts.component';
 import { SharedOneModule } from 'src/app/shared-one/shared-one.module';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule} from '@angular/material/card';
 
 
 
@@ -21,7 +26,12 @@ import { MatDividerModule } from '@angular/material/divider';
     RouterModule,
     SharedOneModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    MatToolbarModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    BrowserAnimationsModule,
+    MatCardModule
   ]
 })
 export class DefaultModule { }
