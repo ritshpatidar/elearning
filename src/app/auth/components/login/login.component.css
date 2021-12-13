@@ -1,0 +1,21 @@
+.default{
+  background-image: linear-gradient(#E2E6EA, #2F056B);
+}
+
+.card
+{
+  border: none;
+}
+
+.trey
+{
+  background: none;
+}
+
+.newfont{
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  line-height: 4rem;
+  font-size: 50px;
+  font-weight: 600;
+  color: black;
+}
