@@ -1,5 +1,7 @@
 import { Component, OnInit, Output} from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+import  {GlobalConstants} from './../../../global-constants';
 
 
 @Component({
@@ -11,12 +13,17 @@ export class HeaderComponent implements OnInit {
 
   @Output() toggleSideBarForMe = new EventEmitter<any>();
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void { }
 
   toggleSideBar() {
     this.toggleSideBarForMe.emit();
+  }
+
+  signOut(){
+    localStorage.removeItem(GlobalConstants.authTokenKey);
+    this.router.navigate([""]);
   }
 
 }

@@ -8,6 +8,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './components/home/home.component';
 import {MatToolbarModule} from '@angular/material/toolbar'
+import { AuthService } from './auth.service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -22,7 +24,11 @@ import {MatToolbarModule} from '@angular/material/toolbar'
     FormsModule,
     MatSliderModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
+  ],
+  providers:[
+    AuthService
   ],
   exports:[
     LoginComponent,
