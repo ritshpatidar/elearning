@@ -15,7 +15,9 @@ import { MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
+import {MatTableModule} from '@angular/material/table';
 import { NewcourseComponent } from 'src/app/modules/newcourse/newcourse.component';
+
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -37,7 +39,8 @@ import { NewcourseComponent } from 'src/app/modules/newcourse/newcourse.componen
     MatIconModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule
   ]
 })
 export class DefaultModule { }
