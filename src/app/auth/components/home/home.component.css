@@ -1,0 +1,64 @@
+.home{
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(#E2E6EA, #2F056B);
+}
+
+.section_right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.section_left{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.doodle {
+    width: 400px;
+    height: 400px;
+}
+
+.details {
+    width: 330px;
+    height: 330px;
+    padding: 20px;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+}
+
+.edu {
+    color: #2F4F4F;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.studybud{
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.quote{
+    font-style: italic;
+}
+
+.get_started{
+    width: 40%;
+    border-radius: 15px;
+}
