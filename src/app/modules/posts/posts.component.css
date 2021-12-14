@@ -84,3 +84,12 @@ mat-toolbar {
     padding: 0 2.6rem;
   }
 }
+
+  .red-color {
+    color: #C82333;
+  }
+
+.mat-card-image {
+  height: 10vw;
+  object-fit: cover;
+}
