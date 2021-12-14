@@ -12,14 +12,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule} from '@angular/material/card';
-
-
-
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
+import { NewcourseComponent } from 'src/app/modules/newcourse/newcourse.component';
 @NgModule({
   declarations: [
     DefaultComponent,
     DashboardComponent,
-    PostsComponent
+    PostsComponent,
+    NewcourseComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,11 @@ import { MatCardModule} from '@angular/material/card';
     MatButtonModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule,
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DefaultModule { }

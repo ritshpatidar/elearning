@@ -81,7 +81,7 @@
   </div>
 
    <div class="col-sm">
-     <button class="button-36" role="button">+ Add New</button>
+     <button mat-raised-button (click)="onCreate()" role="button">+ Add New</button>
   </div>
 
   </div>
@@ -89,13 +89,14 @@
   	<p class="subtitle">All courses are viewed here!</p>
 
   <div fxLayout="row wrap" fxLayoutGap="12px grid">
+    
     <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let name of ['Course 1','Course 2','Course 3']"> 
          <!-- data array from backend to ngFor  -->
+         
       <mat-card class="mat-elevation-z4">
         <mat-card-header>
-          <mat-card-title>{{name}}</mat-card-title>
+                <mat-card-title>{{name}}</mat-card-title>
         </mat-card-header>
-
         <!-- fetch image for each course here with nae -->
         <img mat-card-image src="assets/golang.png">
    

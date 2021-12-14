@@ -6,6 +6,8 @@ import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
+import { NewcourseComponent } from './modules/newcourse/newcourse.component';
+
 
 
 @NgModule({
@@ -21,6 +23,7 @@ import { DefaultModule } from './layouts/default/default.module';
     DefaultModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [NewcourseComponent]
 })
 export class AppModule { }
