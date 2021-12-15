@@ -8,6 +8,7 @@ import { SharedOneModule } from 'src/app/shared-one/shared-one.module';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -40,7 +41,8 @@ import { NewcourseComponent } from 'src/app/modules/newcourse/newcourse.componen
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,
+    MatProgressSpinnerModule
   ]
 })
 export class DefaultModule { }

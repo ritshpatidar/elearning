@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { AppService } from 'src/app/dashboard_service/app.service';
 import { NewcourseComponent } from '../newcourse/newcourse.component';
 
 
@@ -10,14 +11,37 @@ import { NewcourseComponent } from '../newcourse/newcourse.component';
 })
 export class PostsComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  title = 'Card View Demo';
+  courses = [{name:"", image:"", _id:""}];
+  coursesFetched = false;
+  gridColumns = 3;
+
+  constructor(public dialog: MatDialog, private appService: AppService) { }
 
   ngOnInit(): void {
+    this.getCourses();
   }
 
-    title = 'Card View Demo';
+  getCourses(){
+    this.appService.getAllCourses().subscribe((res)=>{
+      console.log(res);
+      if(res.success){
+        this.courses = res.results;
+        this.coursesFetched=true;
+      }
+    });
+  }
 
-  gridColumns = 3;
+  deleteCourse(id:string){
+    this.appService.deleteCouse(id).subscribe((res)=>{
+      console.log(res);
+      if(res.success){
+        alert("Course deleted");
+      } else {
+        alert("Could not delete course");
+      }
+    })
+  }
 
   toggleGridColumns() {
     this.gridColumns = this.gridColumns === 3 ? 4 : 3;
@@ -27,8 +51,9 @@ export class PostsComponent implements OnInit {
     this.dialog.open(NewcourseComponent)
   }
 
-  DeleteCourse(){
-    // delete course function here
+  onRefresh(){
+    this.coursesFetched=false;
+    this.getCourses();
   }
 
 }

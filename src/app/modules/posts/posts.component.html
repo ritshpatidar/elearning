@@ -13,31 +13,36 @@
   </div>
 
    <div class="col-sm">
+     <button mat-raised-button (click)="onRefresh()" style="margin-right: 20px;" role="button">Refresh</button>
      <button mat-raised-button (click)="onCreate()" role="button">+ Add New</button>
   </div>
 
   </div>
 
-  	<p class="subtitle">All courses are viewed here!</p>
-
+  <div *ngIf="!coursesFetched; else elseBlock">
+    <mat-spinner strokeWidth="10" diameter="40"></mat-spinner>
+  </div>
+  <ng-template #elseBlock>
   <div fxLayout="row wrap" fxLayoutGap="12px grid">
   
-    <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let name of ['Course 1','Course 2','Course 3']"> 
+    <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of courses"> 
          <!-- data array from backend to ngFor  -->
          
       <mat-card class="mat-elevation-z4">
         <mat-card-header>
-                <mat-card-title>{{name}}</mat-card-title>
+                <mat-card-title>{{item.name}}</mat-card-title>
         </mat-card-header>
         
         <!-- fetch image for each course here with nae -->
-        <img mat-card-image src="assets/default.jpg">
+        <img mat-card-image class="thumbnail-image" src={{item.image}} onerror="this.src='assets/default.jpg';"  alt="..." />
 
-         <button type="button" (click)="DeleteCourse" class="btn btn-outline-danger">Delete</button>
+         <button type="button" (click)="deleteCourse(item._id)" class="btn btn-outline-danger">Delete</button>
    
       </mat-card>
     </div>
+  
   </div>
+  </ng-template>
 
 
 </div>
