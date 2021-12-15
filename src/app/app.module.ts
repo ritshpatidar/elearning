@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 import { NewcourseComponent } from './modules/newcourse/newcourse.component';
+import { AppService } from './dashboard_service/app.service';
 
 
 
@@ -22,7 +23,7 @@ import { NewcourseComponent } from './modules/newcourse/newcourse.component';
     BrowserAnimationsModule,
     DefaultModule
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent],
   entryComponents: [NewcourseComponent]
 })
