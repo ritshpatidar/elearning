@@ -3,14 +3,14 @@
 <div class="default">
  <section>
   <div class="container py-5">
-    <div class="row d-flex">
-      <div class="tray col col-xl-8">
+    <div class="row d-flex col-sm">
+      <div class="tray col col-xl-8" style="margin-top: 8%;">
              <img src="assets/StudyBud.png" class="img-responsive center" alt="" style="width:20%">
              <h1 class="newfont" style="letter-spacing: 1px;">Learning has never been so easy!</h1>
-             <h4 style="color: #ffff;">Sign in ->  Enroll to new courses -> Get all the study material you need!</h4>
+             <h4 class="font" style="color: #2F056B;">Sign in, Enroll to new courses, Get all the study material you need!</h4>
       </div>
       
-      <div class="col col-xl-4">
+      <div class="col-sm">
         <div class="card" style="border-radius: 2rem;">
             
               <div class="card-body p-3 p-lg-5 text-black">
@@ -25,10 +25,10 @@
 
 
                   <div class="align-items-center  mb-2 pb-1">
-                    <img src="assets/StudyBud.png" class="img-responsive center" alt="" style="width:20%">
+                    <img src="assets/StudyBud.png" class="img-responsive center" alt="" style="width:30%">
                   </div>
 
-                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your StudyBud account</h5>
+                  <h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Sign into your StudyBud account</h5>
 
                   <div class="form-outline mb-4">
                     <input  
@@ -39,8 +39,8 @@
                     #username="ngModel"
                     id="loginUsername" 
                     class="form-control form-control-lg"  
+                    placeholder ="Username"
                     />
-                    <label class="form-label">Username(Firstname_Lastname)</label>
 
                     <!-- testing -->
 
@@ -59,8 +59,9 @@
                     required 
                     #password="ngModel"
                     id="loginPassword" 
-                    class="form-control form-control-lg" />
-                    <label class="form-label">Password</label>
+                    class="form-control form-control-lg" 
+                    placeholder ="******"/>
+        
 
                       <!-- <p>Password value: {{ password.value }}</p>
                       <p>Password valid: {{ password.valid }}</p>
@@ -81,6 +82,7 @@
                   <p class="mb-3 pb-lg-1" style="color: #393f81;">Don't have an account? <a [routerLink]="['/register']" style="color: #393f81;">Register here</a></p>
                   <a href="#!" class="small text-muted">Terms of use.</a>
                   <a href="#!" class="small text-muted">Privacy policy</a>
+                  
                 </form>
 
               </div>
@@ -89,5 +91,4 @@
     </div>
   </div>
 </section>
-
 
