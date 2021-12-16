@@ -3,8 +3,7 @@
   height: 100vh;
 }
 
-.card {
-  margin-top: 10px;  
+.card {  
   border: none;
 }
 
@@ -31,4 +30,18 @@
 
 .form-control {
   font-size: 14px;
+}
+
+#footer {
+  background: #343b40;
+  padding: 10px 0;
+  color: #fff;
+  width: 100%;
+  font-size: 12px;
+  position: fixed;
+  bottom: 0;
+}
+
+#footer .copyright {
+  text-align: center;
 }

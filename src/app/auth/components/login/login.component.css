@@ -1,6 +1,5 @@
 .default{
- 
-  height: 100vh;
+  height: 100%;
   background: url(/assets/class.jpg) top center;
 }
 
@@ -34,3 +33,61 @@
 .form-control{
   font-size: 14px;
 }
+
+#footer {
+  background: #343b40;
+  padding: 10px 0;
+  color: #fff;
+  width: 100%;
+  font-size: 12px;
+  position: fixed;
+  bottom: 0;
+}
+
+#footer .copyright {
+  text-align: center;
+}
+
+
+#header {
+  height: 40px;
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+#header #logo h1 {
+  font-size: 32px;
+  margin: 0;
+  line-height: 1;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+#header #logo h1 a,
+#header #logo h1 a:hover {
+  color: #fff;
+}
+
+#header #logo img {
+  padding: 0;
+  margin: 0;
+  width: 30%;
+  position: relative;
+}
+
+#header.header-transparent {
+  background: transparent;
+}
+
+#header.header-scrolled {
+  background: rgba(52, 59, 64, 0.9);
+  height: 70px;
+  transition: all 0.5s;
+}
+
+.scrolled-offset {
+  margin-top: 70px;
+}
+
