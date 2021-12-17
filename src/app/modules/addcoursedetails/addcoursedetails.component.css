@@ -1,0 +1,60 @@
+.font_1{
+    border-color: black;
+    border-radius: 2px;
+    font-size: 12px;
+}
+
+
+
+.default {
+  height: 100%;
+}
+
+.card {
+  border: none;
+}
+
+.trey {
+  background: none;
+}
+
+.newfont {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 4rem;
+  font-size: 40px;
+  font-weight: 600;
+  color: black;
+}
+
+.font {
+  font-family:
+    'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1rem;
+  font-size: 18px;
+  font-weight: 200;
+  color: #7A7E83;
+}
+
+.form-control {
+  font-size: 14px;
+}
+
+.btn-dark:hover {
+    background-color: #28A745;
+}
+
+.btn-dark {
+    background-color: grey;
+    border: none;
+    font-size: 12px;
+}
+
+.btn-danger {
+ background-color: grey;
+ border: none;
+ font-size: 12px;
+ }
+
+ .btn-danger:hover{
+     background-color: #C82333;
+ }

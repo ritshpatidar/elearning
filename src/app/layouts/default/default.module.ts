@@ -18,13 +18,16 @@ import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
 import {MatTableModule} from '@angular/material/table';
 import { NewcourseComponent } from 'src/app/modules/newcourse/newcourse.component';
+import { AddcoursedetailsComponent } from 'src/app/modules/addcoursedetails/addcoursedetails.component';
+
 
 @NgModule({
   declarations: [
     DefaultComponent,
     DashboardComponent,
     PostsComponent,
-    NewcourseComponent
+    NewcourseComponent,
+    AddcoursedetailsComponent
   ],
   imports: [
     CommonModule,

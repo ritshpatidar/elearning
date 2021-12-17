@@ -90,6 +90,11 @@ mat-toolbar {
   }
 
 .mat-card-image {
-  height: 10vw;
+  height: 5vw;
   object-fit: cover;
+}
+
+.mat-card:hover {
+  background-color: #E2E6EA;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
