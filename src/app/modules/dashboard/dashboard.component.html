@@ -1,10 +1,16 @@
-<div>
-    <h3>Students Enrolled</h3>
-</div>
+<mat-card class="numbers_card mat-elevation-z8">
+  <div class="courses_no">
+    <div class="big_number">4</div>
+    <div class="subtitle">Courses</div>
+  </div>
+  <div class="enrolled_no">
+    <div class="big_number">20</div>
+    <div class="subtitle">Enrolled Students</div>
+  </div>
+</mat-card>
 
-<mat-divider>
-
-</mat-divider>
+<br>
+<br>
 
 <div>
    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -20,20 +26,20 @@
 
   <!-- Name Column -->
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <th mat-header-cell *matHeaderCellDef> Course Name </th>
     <td mat-cell *matCellDef="let element"> {{element.name}} </td>
   </ng-container>
 
-    <!-- Weight Column -->
-  <ng-container matColumnDef="weight">
-    <th mat-header-cell *matHeaderCellDef> Weight </th>
-    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    <!-- Enrolled Column -->
+  <ng-container matColumnDef="students_enrolled">
+    <th mat-header-cell *matHeaderCellDef> Students Enrolled </th>
+    <td mat-cell *matCellDef="let element"> {{element.students_enrolled}} </td>
   </ng-container>
 
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="symbol">
-    <th mat-header-cell *matHeaderCellDef> Symbol </th>
-    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+  <!-- Modules Column -->
+  <ng-container matColumnDef="no_of_modules">
+    <th mat-header-cell *matHeaderCellDef> No of Modules </th>
+    <td mat-cell *matCellDef="let element"> {{element.no_of_modules}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -44,8 +50,10 @@
 <mat-divider>
 
 </mat-divider>
-
-<div>
+<br>
+<br>
+<mat-card class="mat-elevation-z8">
     <!-- <div>table</div>
     <div>pi charts</div> -->
-</div>
+    <div echarts [options]="chartOption" class="demo-chart"></div>
+</mat-card>

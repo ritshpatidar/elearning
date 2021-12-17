@@ -18,6 +18,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
 import {MatTableModule} from '@angular/material/table';
 import { NewcourseComponent } from 'src/app/modules/newcourse/newcourse.component';
+import { NgxEchartsModule } from 'ngx-echarts';
 import { AddcoursedetailsComponent } from 'src/app/modules/addcoursedetails/addcoursedetails.component';
 
 
@@ -45,7 +46,10 @@ import { AddcoursedetailsComponent } from 'src/app/modules/addcoursedetails/addc
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    })
   ]
 })
 export class DefaultModule { }

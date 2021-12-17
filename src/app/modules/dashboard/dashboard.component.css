@@ -1,3 +1,42 @@
 table {
   width: 100%;
 }
+
+th {
+  font-weight: bolder;
+}
+
+.numbers_card {
+  background-color: #2F056B;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
+
+.courses_no{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.enrolled_no{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.big_number{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.subtitle{
+  margin-top: 15px;
+}
+
+.demo-chart {
+  height: 400px;
+}
