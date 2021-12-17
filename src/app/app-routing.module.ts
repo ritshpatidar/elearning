@@ -25,7 +25,7 @@ const routes: Routes = [
     component: PostsComponent,
   },
   {
-    path:'addcoursedetails',
+    path:'addcoursedetails/:id',
     component: AddcoursedetailsComponent,
     // data: { item: [item.name] }
   }
