@@ -9,7 +9,8 @@
 
 <div class="row">
  <div class="col-sm">
-       <h1>Active Courses</h1>
+       <h3>Active Courses</h3>
+       <h5>click on the course name to add course data</h5>
   </div>
 
    <div class="col-sm">
@@ -29,12 +30,13 @@
          <!-- data array from backend to ngFor  -->
          
       <mat-card class="mat-elevation-z4">
-        <mat-card-header>
+        <mat-card-header  routerLinkActive="list-item-active" routerLinkActive="list-item-active" routerLink="/dashboard/addcoursedetails">
                 <mat-card-title>{{item.name}}</mat-card-title>
         </mat-card-header>
         
         <!-- fetch image for each course here with nae -->
-        <img mat-card-image class="thumbnail-image" src={{item.image}} onerror="this.src='assets/default.jpg';"  alt="..." />
+        <img mat-card-image routerLinkActive="list-item-active" routerLinkActive="list-item-active" routerLink="/dashboard/addcoursedetails"
+         class="thumbnail-image" src={{item.image}} onerror="this.src='assets/default.jpg';"  alt="..." />
 
          <button type="button" (click)="deleteCourse(item._id)" class="btn btn-outline-danger">Delete</button>
    

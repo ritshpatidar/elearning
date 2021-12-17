@@ -9,8 +9,6 @@ import { DefaultModule } from './layouts/default/default.module';
 import { NewcourseComponent } from './modules/newcourse/newcourse.component';
 import { AppService } from './dashboard_service/app.service';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

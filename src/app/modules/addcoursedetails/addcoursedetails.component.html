@@ -1,0 +1,77 @@
+
+<div class="default">
+<div class="container">
+      <div class="col-sm">
+        <div class="card" style="border-radius: 2rem;">
+            
+              <div class="card-body text-black">
+<!-- angular template driven -->
+               <h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Add course content here</h5>
+    
+  <form [formGroup]="AddModuleForm" (ngSubmit)="onSubmit()">  
+    
+        <div class="form-outline mb-1">
+                    <input 
+                    type="text" 
+                    name="modulename" 
+                    required 
+                    id="modulename" 
+                    formControlName="modulename"
+                    class="form-control form-control-lg" 
+                    placeholder ="name of the module"/>
+                  </div>
+
+                     <div class="form-outline mb-1">
+                    <input 
+                    type="file" 
+                    name="file" 
+                    required 
+                    id="file" 
+                    formControlName="file"
+                    class="form-control form-control-lg" 
+                    />
+                  </div>
+
+
+    <table class="table table-bordered" formArrayName="links">  
+      <tr>  
+        <th colspan="2">Add Links:</th>  
+        <th width="100px"><button class="btn btn-dark btn-lg btn-block" (click)="addLink()" >Add new link</button></th>  
+      </tr>  
+      <tr *ngFor="let quantity of links().controls; let i=index" [formGroupName]="i">  
+        <td>  
+            Link address:  
+            <input type="text" formControlName="linkaddress" class="form-control">  
+        </td>  
+        <td>  
+            <button (click)="removeLink(i)" class="btn btn-danger">Remove</button>  
+        </td>  
+      </tr> 
+      
+    </table> 
+    
+       <div class="pt-1 mb-3">
+                    <button class="btn btn-dark btn-lg btn-block" style="font-size: 14px;" type="submit"  
+                    >Add module</button>
+        </div>
+  </form>  
+  <mat-divider></mat-divider>
+                <div>
+                    
+                </div>
+
+              </div>
+
+<div class="container">  
+    <h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Current course content</h5>
+      
+       
+  <br/>  
+  {{this.AddModuleForm.value | json}}  
+</div>  
+        </div>
+      </div>
+
+    </div>
+  </div>
+
