@@ -12,51 +12,53 @@
   <form [formGroup]="AddCourseForm" (ngSubmit)="onSubmit()">  
       
     <p>  
-      <label for="name">Course Name:</label>  
-      <input type="text" id="name" name="name" formControlName="name" class="form-control">  
-    </p>  
+      <label for="coursename">Course Name:</label>  
+      <input
+          style="width: 100%;"
+          type="text"  
+          type="text" 
+          id="name" 
+          name="coursename" 
+          class="form-control">  
+    </p>
 
-    <!-- <div class="form-group">
+  
+        <p>  
+          <label for="duration">Duration in hours:</label>  
+          <input 
+            type="number" 
+            min="1" 
+            id="duration"
+            name="duration" 
+            class="form-control">  
+        </p>  
 
-        <label for="file">Add file</label>
+        <div class="form-outline">
+          <label for="img">Upload course image</label>  
+                    <input 
+                    type="file" #imageInput
+                    name="file" 
+                    id="file" 
+                    class="form-control form-control-lg" 
+                    accept="image/*"
+                    />
+         </div>
 
-        <input 
+        <p>
+        <mat-form-field appearance="fill">
+          <mat-label for="type">Type of course</mat-label>
+          <mat-select id="type" formControlName="type">
+            <mat-option value="Tech">Technical</mat-option>
+            <mat-option value="NonTech">Non-Technical</mat-option>
+            <mat-option value="Other">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+        </p>
 
-            formControlName="file"
+     
+     
 
-            id="file" 
-
-            type="file" 
-
-            class="form-control"
-
-            (change)="handleFileInput($event)"
-
-        >
-
-    </div> -->
-    
-    <!-- <table class="table table-bordered" formArrayName="courses">  
-      <tr>  
-        <th colspan="2">Add Links</th>  
-        <th width="150px"><button type="button" (click)="addCourse()" class="btn">+ add</button></th>  
-      </tr>  
-      <tr *ngFor="let quantity of courses().controls; let i=index" [formGroupName]="i">  
-        <td>  
-            Link Address :  
-            <input type="text" formControlName="address" class="form-control">  
-        </td>   
-        <td>  
-            <button (click)="removeCourse(i)" class="button">Remove</button>  
-        </td>  
-      </tr>  
-    </table>   -->
-
-    <!-- upload a pdf in form -->
-
-    
-    
-    <button type="submit" class="btn1">Submit</button>  
+    <button  type="submit" class="btn1">Submit</button>  
       
   </form>  
 
