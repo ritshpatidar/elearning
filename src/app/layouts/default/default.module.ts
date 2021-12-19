@@ -21,6 +21,7 @@ import { NewcourseComponent } from 'src/app/modules/newcourse/newcourse.componen
 import { AddcoursedetailsComponent } from 'src/app/modules/addcoursedetails/addcoursedetails.component';
 
 
+
 @NgModule({
   declarations: [
     DefaultComponent,
