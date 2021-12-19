@@ -29,3 +29,15 @@
 .form-control{
     margin-bottom: 10px;
 }
+
+.form-control {
+  font-size: 14px;
+}
+
+.mat-form-field{
+     font-size: 14px;
+}
+
+.mat-select{
+     width: "100%";
+}

@@ -9,7 +9,7 @@ import { AppService } from 'src/app/dashboard_service/app.service';
   styleUrls: ['./newcourse.component.css']
 })
 export class NewcourseComponent implements OnInit {
-  
+
 
    constructor(private fb:FormBuilder, private appService: AppService, private dialog: MatDialog) {  
      
