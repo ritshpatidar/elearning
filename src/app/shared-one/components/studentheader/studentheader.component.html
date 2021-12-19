@@ -1,0 +1,30 @@
+<mat-toolbar color= "primary">
+    <mat-toolbar-row>
+
+        <button mat-icon-button (click)="toggleSideBar()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+    
+        <span>
+            <img src="assets/StudyBud.png" class="img-responsive center" alt="" style="width:20%">
+        </span>
+
+        <div fxFlex fxLayout="row"  fxLayoutAlign="end center" style="padding-top: 20px;">
+            <ul fxLayout="row" fxLayoutGap="20px">
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>person_outline</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                        <mat-icon>exit_to_app</mat-icon>
+                        Sign out
+                    </button>
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+
+    </mat-toolbar-row>
+</mat-toolbar>

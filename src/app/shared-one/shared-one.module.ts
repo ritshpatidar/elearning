@@ -11,12 +11,17 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import { RouterModule } from '@angular/router';
+import { StudentheaderComponent } from './components/studentheader/studentheader.component';
+import { StudentsidebarComponent } from './components/studentsidebar/studentsidebar.component';
+
 
 @NgModule({
   declarations: [
     HeaderComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    StudentheaderComponent,
+    StudentsidebarComponent,
   ],
   imports: [
     CommonModule,
@@ -32,7 +37,9 @@ import { RouterModule } from '@angular/router';
   exports:[
     HeaderComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    StudentheaderComponent,
+    StudentsidebarComponent,
   ]
 })
 export class SharedOneModule { }
