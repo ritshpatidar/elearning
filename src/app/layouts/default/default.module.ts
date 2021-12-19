@@ -22,6 +22,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { AddcoursedetailsComponent } from 'src/app/modules/addcoursedetails/addcoursedetails.component';
 
 
+
 @NgModule({
   declarations: [
     DefaultComponent,

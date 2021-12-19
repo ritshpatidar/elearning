@@ -58,3 +58,7 @@
  .btn-danger:hover{
      background-color: #C82333;
  }
+
+ .td .form-control{
+     height: 30px;
+ }

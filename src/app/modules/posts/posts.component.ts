@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AppService } from 'src/app/dashboard_service/app.service';
 import { NewcourseComponent } from '../newcourse/newcourse.component';
-
-
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
