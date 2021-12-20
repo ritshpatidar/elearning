@@ -1,16 +1,26 @@
 <mat-card class="numbers_card mat-elevation-z8">
   <div class="courses_no">
-    <div class="big_number">4</div>
+    <div class="big_number">{{total_courses}}</div>
     <div class="subtitle">Courses</div>
   </div>
   <div class="enrolled_no">
-    <div class="big_number">20</div>
+    <div class="big_number">{{total_enrolled}}</div>
     <div class="subtitle">Enrolled Students</div>
   </div>
 </mat-card>
 
 <br>
 <br>
+
+<mat-card class="mat-elevation-z8">
+  <!-- <div>table</div>
+  <div>pi charts</div> -->
+  <div echarts [options]="chartOption" class="demo-chart"></div>
+</mat-card>
+
+<br>
+<br>
+
 
 <div>
    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -46,14 +56,3 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 </div>
-
-<mat-divider>
-
-</mat-divider>
-<br>
-<br>
-<mat-card class="mat-elevation-z8">
-    <!-- <div>table</div>
-    <div>pi charts</div> -->
-    <div echarts [options]="chartOption" class="demo-chart"></div>
-</mat-card>

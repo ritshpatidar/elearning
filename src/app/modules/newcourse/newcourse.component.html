@@ -15,7 +15,9 @@
       <label for="coursename">Course Name:</label>  
       <input
           style="width: 100%;"
-          type="text"  
+          type="text" 
+          matInput 
+          formControlName="coursename"
           type="text" 
           id="name" 
           name="coursename" 
@@ -26,7 +28,9 @@
         <p>  
           <label for="duration">Duration in hours:</label>  
           <input 
+            matInput
             type="number" 
+            formControlName="duration"
             min="1" 
             id="duration"
             name="duration" 
@@ -38,7 +42,10 @@
                     <input 
                     type="file" #imageInput
                     name="file" 
+                    formControlName="img"
                     id="file" 
+                    matInput
+                    (change)="handleFileInput($event)"
                     class="form-control form-control-lg" 
                     accept="image/*"
                     />

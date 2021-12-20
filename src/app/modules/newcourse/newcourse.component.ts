@@ -14,10 +14,10 @@ export class NewcourseComponent implements OnInit {
    constructor(private fb:FormBuilder, private appService: AppService, private dialog: MatDialog) {  
      
     this.AddCourseForm = this.fb.group({  
-      name: '',  
-      courses: this.fb.array([]) , 
-      file: new FormControl('', [Validators.required]),
-      fileSource: new FormControl('', [Validators.required]) 
+      coursename: '',   
+      img: new FormControl('', [Validators.required]),
+      duration:'',
+      type:''
     });  
   }  
 
@@ -55,20 +55,17 @@ export class NewcourseComponent implements OnInit {
      
   onSubmit() {  
     console.log(this.AddCourseForm.value);
-    console.log(this.fileToUpload);
-    let content:any[] = [];
-    this.AddCourseForm.value.courses.forEach((value:any) => {
-      content.push({topic_name:"x", video_link:value.address});
-    }); 
 
     const data = {
       active: true,
-      name: this.AddCourseForm.value.name,
-      image:"https://www.freeiconspng.com/uploads/c--logo-icon-0.png",
-      course_file:this.fileToUpload,
-      students_enrolled:[],
-      content:content
+      name: this.AddCourseForm.value.coursename,
+      category:this.AddCourseForm.value.type,
+      duration:this.AddCourseForm.value.duration,
+      image:this.fileToUpload,
+      students_enrolled:JSON.stringify([]),
+      content:JSON.stringify([])
     }
+    
     this.appService.addCourse(data).subscribe(responseData => {
       console.log("Response Here");
       console.log(responseData);
@@ -83,7 +80,7 @@ export class NewcourseComponent implements OnInit {
       console.log("Error occured");
       alert("Something went wrong");
       console.log(err);
-    });;  
+    });;
   }  
 
 }

@@ -36,7 +36,7 @@
         
         <!-- fetch image for each course here with nae -->
         <img mat-card-image routerLinkActive="list-item-active" routerLinkActive="list-item-active" routerLink="/dashboard/addcoursedetails/{{item.name}}"
-         class="thumbnail-image" src={{item.image}} onerror="this.src='assets/default.jpg';"  alt="..." />
+         class="thumbnail-image" src={{apiUrl+item.image}} onerror="this.src='assets/default.jpg';"  alt="..." />
 
          <button type="button" (click)="deleteCourse(item._id)" class="btn btn-outline-danger">Delete</button>
    

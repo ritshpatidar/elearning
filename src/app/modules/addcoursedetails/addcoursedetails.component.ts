@@ -1,6 +1,7 @@
 import { Component, OnInit,  Input } from '@angular/core';
 import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms' 
 import { ActivatedRoute } from '@angular/router'; 
+import { AppService } from 'src/app/dashboard_service/app.service';
 
 @Component({
   selector: 'app-addcoursedetails',
@@ -10,8 +11,10 @@ import { ActivatedRoute } from '@angular/router';
 export class AddcoursedetailsComponent implements OnInit {
 
   AddModuleForm: FormGroup; 
+  course_name:string = "";
+  fileToUpload: File | null = null;  
 
-  constructor(private fb:FormBuilder, private router : ActivatedRoute) {
+  constructor(private fb:FormBuilder, private router : ActivatedRoute, private appService: AppService) {
 
     this.AddModuleForm = this.fb.group({  
       modulename: '',  
@@ -21,7 +24,12 @@ export class AddcoursedetailsComponent implements OnInit {
   } 
 
   ngOnInit(): void {
-      console.log(this.router.snapshot.params)
+      console.log(this.router.snapshot.params);
+      this.course_name = this.router.snapshot.params['name'];
+  }
+
+  handleFileInput(e: Event) {
+    this.fileToUpload = (<HTMLInputElement>e.target)!.files![0];
   }
 
   links() : FormArray {  
@@ -44,6 +52,23 @@ export class AddcoursedetailsComponent implements OnInit {
      
   onSubmit() {  
     console.log(this.AddModuleForm.value);  
+    let data = {
+      name: this.course_name,
+      video_link: this.AddModuleForm.value.links[0].linkname,
+      module_name: this.AddModuleForm.value.modulename,
+      module_file: this.fileToUpload
+    }
+
+    this.appService.addModule(data).subscribe((res)=>{
+      console.log("Response Here");
+      console.log(res);
+      if(res.success){
+        //close pop up
+        alert("Module created successfully");
+      } else {
+        alert("Something went wrong");
+      }
+    });
   } 
     
 }

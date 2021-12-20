@@ -18,13 +18,14 @@
                     id="modulename" 
                     formControlName="modulename"
                     class="form-control form-control-lg" 
-                    placeholder ="name of the module"/>
+                    placeholder ="Name of the Module"/>
                   </div>
 
                      <div class="form-outline mb-1">
                     <input 
                     type="file" 
                     name="file" 
+                    (change)="handleFileInput($event)"
                     required 
                     id="file" 
                     class="form-control form-control-lg" 
@@ -41,7 +42,7 @@
       <tr *ngFor="let quantity of links().controls; let i=index" [formGroupName]="i">  
         <td>  
             Link address:  
-            <input type="text" formControlName="linkaddress" class="form-control">  
+            <input type="text" formControlName="linkname" class="form-control">  
         </td>  
         <td>  
             <button (click)="removeLink(i)" class="btn btn-danger">Remove</button>  
