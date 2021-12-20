@@ -16,12 +16,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import { RouterModule } from '@angular/router';
 import { StudenthomeComponent } from 'src/app/modules/studenthome/studenthome.component';
+import { StudentcoursesComponent } from 'src/app/modules/studentcourses/studentcourses.component';
 
 
 @NgModule({
   declarations: [
     StudentComponent,
-    StudenthomeComponent
+    StudenthomeComponent,
+    StudentcoursesComponent
   ],
   imports: [
     CommonModule,

@@ -9,6 +9,7 @@ import { NewcourseComponent } from './modules/newcourse/newcourse.component';
 import { AppService } from './dashboard_service/app.service';
 import { StudentModule } from './layouts/student/student.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
