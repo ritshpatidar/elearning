@@ -24,20 +24,36 @@ export class AppService {
   addCourse(data:{
     active: boolean, 
     name: string,
-    image:string,
-    course_file:any,
-    students_enrolled:Array<string>,
-    content:Array<any>
+    image:any,
+    category:string,
+    duration:number,
+    students_enrolled:string,
+    content:string
   }):Observable<any>{
     console.log(localStorage.getItem(GlobalConstants.authTokenKey))
     let body = new FormData();
     body.append("active",String(data.active));
     body.append("name",data.name);
-    body.append("image",data.image);
-    body.append("students_enrolled",JSON.stringify(data.students_enrolled));
-    body.append("content", JSON.stringify(data.content));
-    body.append("course_file",data.course_file, data.course_file.name)
+    body.append("students_enrolled",data.students_enrolled);
+    body.append("content", data.content);
+    body.append("category", data.category);
+    body.append("duration",String(data.duration));
+    body.append("image",data.image, data.image.name);
     return this.http.post(this.apiUrl+"api/admin/addCourse",body,this.httpOptionsFormData);
+  }
+
+  addModule(data:{
+    name:string,
+    module_name:string,
+    video_link:string,
+    module_file:any
+  }):Observable<any>{
+    let body = new FormData();
+    body.append("module_name",data.module_name);
+    body.append("video_link",data.video_link);
+    body.append("name",data.name)
+    body.append("module_file",data.module_file, data.module_file.name);
+    return this.http.put(this.apiUrl+"api/admin/addModule",body,this.httpOptionsFormData);
   }
 
   getAllCourses():Observable<any>{

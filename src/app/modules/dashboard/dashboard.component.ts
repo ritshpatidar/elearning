@@ -1,5 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { EChartsOption } from 'echarts';
+import { AppService } from 'src/app/dashboard_service/app.service';
 
 export interface PeriodicElement {
   name: string;
@@ -7,16 +8,6 @@ export interface PeriodicElement {
   students_enrolled:number
   no_of_modules:number
 }
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'HTML', students_enrolled:10,no_of_modules:4},
-  {position: 2, name: 'Java', students_enrolled:11, no_of_modules:5},
-  {position: 3, name: 'C++', students_enrolled:13,no_of_modules:8},
-  {position: 4, name: 'Game Development', students_enrolled:20,no_of_modules:9},
-  {position: 5, name: 'Go', students_enrolled:12,no_of_modules:7},
-  {position: 6, name: 'Graphics', students_enrolled:6,no_of_modules:3},
-  {position: 7, name: 'Physics', students_enrolled:9,no_of_modules:6},
-];
 
 @Component({
   selector: 'app-dashboard',
@@ -26,7 +17,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class DashboardComponent implements OnInit {
   
   displayedColumns: string[] = ['position', 'name', 'students_enrolled', 'no_of_modules'];
-  dataSource = ELEMENT_DATA;
+  dataSource: PeriodicElement[] = [
+    {position: 1, name: 'HTML', students_enrolled:10,no_of_modules:4}
+  ];
   chartOption: EChartsOption = {
     xAxis: {
       type: 'category',
@@ -46,10 +39,69 @@ export class DashboardComponent implements OnInit {
       },
     ],
   };
-  
-  constructor() { }
+  courses=[];
+  total_enrolled=-1;
+  total_courses=0;
+
+  constructor(private appService: AppService) { }
 
   ngOnInit(): void {
+    this.getCourses();
+  }
+
+  getCourses(){
+    this.appService.getAllCourses().subscribe((res)=>{
+      console.log(res);
+      if(res.success){
+        this.courses = res.results;
+        this.total_courses=res.results.length;
+        this.total_enrolled = this.setOtherData(res.results);
+      }
+    });
+  }
+
+  setOtherData(courses: any):number{
+    let total_enrolled:number = 0;
+    let dataSource: PeriodicElement[] = [];
+    let courseNames:string[] = [];
+    let studentEnolledPerCourse:string[] = [];
+
+    courses.forEach((value:any,index:any) => {
+      total_enrolled += value.students_enrolled.length;
+      dataSource.push({
+        position:index, 
+        name: value.name,
+        students_enrolled:value.students_enrolled.length,
+        no_of_modules:value.content.length
+      });
+      courseNames.push(value.name);
+      studentEnolledPerCourse.push(value.students_enrolled.length);
+    });
+    this.dataSource = dataSource;
+    this.setChartData(courseNames,studentEnolledPerCourse);
+    return total_enrolled;
+  }
+
+  setChartData(names:any[],data:any[]){
+    this.chartOption = {
+      xAxis: {
+        type: 'category',
+        data: names,
+        axisLabel: {
+          interval: 0,
+          rotate: 30
+        }
+      },
+      yAxis: {
+        type: 'value',
+      },
+      series: [
+        {
+          data: data,
+          type: 'bar',
+        },
+      ],
+    }
   }
 
 }
