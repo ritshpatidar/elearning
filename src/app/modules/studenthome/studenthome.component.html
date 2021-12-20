@@ -1,0 +1,39 @@
+
+  <section id="hero">
+    <div class="hero-container">
+      <h1>Learning new things is just a step away from you now,</h1>
+      <h2>Enroll to new courses and you are all set!</h2>
+    </div>
+  </section>
+
+    <h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Suggested learning</h5>
+
+<div class="content">
+      
+ <!-- <div *ngIf="!coursesFetched; else elseBlock">
+    <mat-spinner strokeWidth="10" diameter="40"></mat-spinner>
+  </div> -->
+  <!-- <ng-template #elseBlock> -->
+  <div fxLayout="row wrap" fxLayoutGap="12px grid">
+  
+    <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of courses"> 
+         <!-- data array from backend to ngFor  -->
+         
+      <mat-card class="mat-elevation-z4">
+        <mat-card-header  routerLinkActive="list-item-active">
+                <mat-card-title>{{item.name}}</mat-card-title>
+        </mat-card-header>
+        
+        <!-- fetch image for each course here with nae -->
+        <img mat-card-image routerLinkActive="list-item-active"
+         class="thumbnail-image" src={{item.image}} onerror="this.src='assets/default.jpg';"  alt="..." />
+
+         <button type="button" class="btn btn-outline-success">Enroll</button>
+   
+      </mat-card>
+    </div>
+  
+  </div>
+  <!-- </ng-template> -->
+
+    </div>

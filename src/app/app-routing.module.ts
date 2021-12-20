@@ -5,12 +5,30 @@ import { DefaultComponent } from './layouts/default/default.component';
 import { AddcoursedetailsComponent } from './modules/addcoursedetails/addcoursedetails.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { PostsComponent } from './modules/posts/posts.component';
+import { StudentComponent } from './layouts/student/student.component';
+import { StudenthomeComponent } from './modules/studenthome/studenthome.component';
+import { StudentcoursesComponent } from './modules/studentcourses/studentcourses.component';
 
 
 
 const routes: Routes = [
   { path: '',
-  component: HomeComponent
+  component: HomeComponent,
+  //component: StudentComponent
+},
+
+  { path: 'student',
+  //component: HomeComponent,
+  component: StudentComponent,
+    children : [{
+    path:'home', 
+    component: StudenthomeComponent
+  },
+  {
+    path:'studentcourses', 
+    component: StudentcoursesComponent
+  },
+]
 },
 
   {

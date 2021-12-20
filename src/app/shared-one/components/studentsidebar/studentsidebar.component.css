@@ -1,0 +1,25 @@
+.mat-icon {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.profile-card {
+  text-align: center;
+  padding: 0 20px 20px 20px;
+}
+
+.mat-nav-list .mat-list-item:focus,
+.mat-action-list .mat-list-item:focus,
+.mat-list-option:focus {
+  background: #7A7E83 !important;
+}
+
+h2{
+  margin-bottom: 0%;
+  margin-top: 0%;
+}
+
+.person{
+  color: #2F056B;
+  font-size: 25px;
+}

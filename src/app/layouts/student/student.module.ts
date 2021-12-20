@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DefaultComponent } from './default.component';
-import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
-import { RouterModule } from '@angular/router';
-import { PostsComponent } from 'src/app/modules/posts/posts.component';
+import { StudentComponent } from './student.component';
 import { SharedOneModule } from 'src/app/shared-one/shared-one.module';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
@@ -15,25 +12,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon'; 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
 import {MatTableModule} from '@angular/material/table';
-import { NewcourseComponent } from 'src/app/modules/newcourse/newcourse.component';
-import { NgxEchartsModule } from 'ngx-echarts';
-import { AddcoursedetailsComponent } from 'src/app/modules/addcoursedetails/addcoursedetails.component';
-import { MatOptionModule } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
+import { RouterModule } from '@angular/router';
+import { StudenthomeComponent } from 'src/app/modules/studenthome/studenthome.component';
+import { StudentcoursesComponent } from 'src/app/modules/studentcourses/studentcourses.component';
+
+
 @NgModule({
   declarations: [
-    DefaultComponent,
-    DashboardComponent,
-    PostsComponent,
-    NewcourseComponent,
-    AddcoursedetailsComponent
+    StudentComponent,
+    StudenthomeComponent,
+    StudentcoursesComponent
   ],
   imports: [
     CommonModule,
-    RouterModule,
     SharedOneModule,
     MatSidenavModule,
     MatDividerModule,
@@ -47,14 +40,9 @@ import { MatSelectModule } from '@angular/material/select';
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
-    MatSelectModule,
-    MatProgressSpinnerModule,
-    MatOptionModule,
-    MatSelectModule,
-    MatFormFieldModule,
-    NgxEchartsModule.forRoot({
-      echarts: () => import('echarts')
-    })
+    RouterModule,
+    MatProgressSpinnerModule
+    
   ]
 })
-export class DefaultModule { }
+export class StudentModule { }
