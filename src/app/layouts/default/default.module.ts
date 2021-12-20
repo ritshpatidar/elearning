@@ -15,13 +15,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon'; 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import {MatTableModule} from '@angular/material/table';
 import { NewcourseComponent } from 'src/app/modules/newcourse/newcourse.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { AddcoursedetailsComponent } from 'src/app/modules/addcoursedetails/addcoursedetails.component';
-import {MatSelectModule} from '@angular/material/select';
-
+import { MatOptionModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -48,6 +49,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatTableModule,
     MatSelectModule,
     MatProgressSpinnerModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatFormFieldModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     })

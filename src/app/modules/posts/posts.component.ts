@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AppService } from 'src/app/dashboard_service/app.service';
+import { GlobalConstants } from 'src/app/global-constants';
 import { NewcourseComponent } from '../newcourse/newcourse.component';
 @Component({
   selector: 'app-posts',
@@ -9,11 +10,11 @@ import { NewcourseComponent } from '../newcourse/newcourse.component';
 })
 export class PostsComponent implements OnInit {
 
+  apiUrl = GlobalConstants.apiURL;
   title = 'Card View Demo';
   courses = [{name:"", image:"", _id:""}];
   coursesFetched = false;
   gridColumns = 3;
-
   constructor(public dialog: MatDialog, private appService: AppService) { }
 
   ngOnInit(): void {
@@ -25,6 +26,9 @@ export class PostsComponent implements OnInit {
       console.log(res);
       if(res.success){
         this.courses = res.results;
+        res.results.forEach((val:any) => {
+          console.log(val.image);
+        });
         this.coursesFetched=true;
       }
     });
