@@ -669,6 +669,7 @@ section {
 
 #about .about-container .background {
   min-height: 300px;
+  border-radius: 20px;
   background: url(/assets/homepage.jpg) center top no-repeat;
   margin-bottom: 10px;
 }
@@ -717,18 +718,13 @@ section {
   border: 2px solid #2dc997;
 }
 
-#about .about-container .icon-box .icon i {
-  color: #2dc997;
-  font-size: 24px;
-  line-height: 0;
-}
 
 #about .about-container .icon-box .title {
-  margin-left: 80px;
   font-weight: 500;
   margin-bottom: 5px;
   font-size: 18px;
   text-transform: uppercase;
+  background-color: #E2E6EA;
 }
 
 #about .about-container .icon-box .title a {
@@ -736,7 +732,7 @@ section {
 }
 
 #about .about-container .icon-box .description {
-  margin-left: 80px;
+  margin-right: 10px;
   line-height: 24px;
   font-size: 14px;
 }
