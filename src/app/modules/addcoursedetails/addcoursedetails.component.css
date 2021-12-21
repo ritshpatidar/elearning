@@ -62,3 +62,13 @@
  .td .form-control{
      height: 30px;
  }
+
+ .delete_icon:hover {
+   color:red;
+   cursor:pointer;
+ }
+
+ .file_icon:hover{
+   color:gray;
+   cursor: pointer;
+ }
