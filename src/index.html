@@ -1,8 +1,23 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //To minimise the height of chatbox
+        $(document).ready(function() {
+            window.addEventListener('dfMessengerLoaded', function (event) {
+            $r1 = document.querySelector("df-messenger");
+            $r2 = $r1.shadowRoot.querySelector("df-messenger-chat");
+            // $r3 = $r2.shadowRoot.querySelector("df-messenger-titlebar"); //for other mods
+            var sheet = new CSSStyleSheet;
+            // manage box height from here
+            sheet.replaceSync( `div.chat-wrapper[opened="true"] { height: 300px }`);
+            $r2.shadowRoot.adoptedStyleSheets = [ sheet ];
+            });
+        });
+    </script>
   <meta charset="utf-8">
-  <title>Elearning</title>
+  <title>StudyBud: Learning App</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
