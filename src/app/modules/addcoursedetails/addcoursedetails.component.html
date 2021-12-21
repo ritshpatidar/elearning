@@ -5,12 +5,14 @@
         <div class="card" style="border-radius: 2rem;">
             
               <div class="card-body text-black">
-<!-- angular template driven -->
+
                <h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Add course content here</h5>
-    
-  <form [formGroup]="AddModuleForm" (ngSubmit)="onSubmit()">  
+  
+<mat-card class="mat-elevation-z4">
+  <form [formGroup]="AddModuleForm">  
     
         <div class="form-outline mb-1">
+                    <label>Module Name:</label>
                     <input 
                     type="text" 
                     name="modulename" 
@@ -36,7 +38,7 @@
 
     <table class="table table-bordered" formArrayName="links">  
       <tr>  
-        <th colspan="2">Add Links:</th>  
+        <th colspan="2">Video Link:</th>  
         <th width="100px"><button class="btn btn-dark btn-lg btn-block" (click)="addLink()" >Add new link</button></th>  
       </tr>  
       <tr *ngFor="let quantity of links().controls; let i=index" [formGroupName]="i">  
@@ -52,13 +54,11 @@
     </table> 
     
        <div class="pt-1 mb-3">
-                    <button class="btn btn-dark btn-lg btn-block" style="font-size: 14px;" type="submit"  
+                    <button (click)="onSubmit()" class="btn btn-dark btn-lg btn-block" style="font-size: 14px;" type="submit"  
                     >Add module</button>
         </div>
-  </form>  
-  <mat-divider></mat-divider>
-                <div>
-                </div>
+  </form> 
+</mat-card>
 
               </div>
 
@@ -66,8 +66,32 @@
     <h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Current course content</h5>
       
        
-  <br/>  
-  <!-- {{this.AddModuleForm.value | json}}   -->
+  <br/> 
+  <div *ngFor="let item of modules"> 
+  <mat-card class="mat-elevation-z4">
+    <mat-card-header style="display: flex; justify-content: space-between; flex-direction: row; align-items: center;">
+      <mat-card-title>{{item.module_name}}</mat-card-title><br>
+      <mat-icon class="delete_icon" aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+    </mat-card-header>
+    <div style="height: 200px; display: flex; align-items: center; flex-direction: row; justify-content: space-around;">
+      <div *ngIf="moduleLoaded" style="display: flex; align-items: flex-start; flex-direction: column;">
+        <youtube-player
+          [videoId]="item.video_link"
+          [height]="150"
+          [width]="300"
+          style="border-radius: 20px;"
+        >
+        </youtube-player>
+      </div>
+      <div>
+        <a [href]="apiUrl+item.module_file" target="_blank">
+          <mat-icon class="file_icon" style="transform: scale(4);" color="primary" aria-hidden="false">insert_drive_file</mat-icon>
+        </a>
+      </div>
+    </div>
+  </mat-card>
+  <br><br>
+  </div>
 </div>  
         </div>
       </div>
