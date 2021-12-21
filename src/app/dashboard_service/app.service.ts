@@ -60,6 +60,10 @@ export class AppService {
     return this.http.get(this.apiUrl+"api/allCourses", this.httpOptionsUrlEncoded);
   }
 
+  getCourse(course_name:string):Observable<any>{
+    return this.http.get(this.apiUrl+"api/getCourse/"+course_name,this.httpOptionsUrlEncoded);
+  }
+
   deleteCouse(id:string):Observable<any>{
     return this.http.delete(this.apiUrl+"api/admin/deleteCourse/"+id,this.httpOptionsUrlEncoded);
   }
