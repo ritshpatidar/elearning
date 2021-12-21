@@ -669,7 +669,6 @@ section {
 
 #about .about-container .background {
   min-height: 300px;
-  border-radius: 20px;
   background: url(/assets/homepage.jpg) center top no-repeat;
   margin-bottom: 10px;
 }
