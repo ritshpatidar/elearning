@@ -242,6 +242,14 @@
   dependencies:
     "tslib" "^2.3.0"
 
+"@angular/youtube-player@^13.1.1":
+  "integrity" "sha512-XmXINmf2jvSlvQb9X5T30aIeKKvx07KGy0S6oB98Yqg7HRHjfaGf7I4EP9e3uKDfQspvz3WfYbln4xXIOkdxKw=="
+  "resolved" "https://registry.npmjs.org/@angular/youtube-player/-/youtube-player-13.1.1.tgz"
+  "version" "13.1.1"
+  dependencies:
+    "@types/youtube" "^0.0.42"
+    "tslib" "^2.3.0"
+
 "@assemblyscript/loader@^0.10.1":
   "integrity" "sha512-H71nDOOL8Y7kWRLqf6Sums+01Q5msqBW2KhDUTemh1tvY04eSkSXrK0uj/4mmY0Xr16/3zyZmsrxN7CKuRbNRg=="
   "resolved" "https://registry.npmjs.org/@assemblyscript/loader/-/loader-0.10.1.tgz"
@@ -1358,6 +1366,11 @@
   "integrity" "sha512-xoDlM2S4ortawSWORYqsdU+2rxdh4LRW9ytc3zmT37RIKQh6IHyKwwtKhKis9ah8ol07DCkZxPt8BBvPjC6v4g=="
   "resolved" "https://registry.npmjs.org/@types/retry/-/retry-0.12.1.tgz"
   "version" "0.12.1"
+
+"@types/youtube@^0.0.42":
+  "integrity" "sha512-Nqo3HMPFPcNyZ7HNFZJjpH+N4yXqpxBItG+41e7nL9zednovMRZMXWj36CctSznbBcbj6ucvkJDo5iZ8SKqLIw=="
+  "resolved" "https://registry.npmjs.org/@types/youtube/-/youtube-0.0.42.tgz"
+  "version" "0.0.42"
 
 "@webassemblyjs/ast@1.11.1":
   "integrity" "sha512-ukBh14qFLjxTQNTXocdyksN5QdM28S1CxHt2rdskFyL+xFV7VremuBLVbmCePj+URalXBENx/9Lm7lnhihtCSw=="
@@ -2565,6 +2578,14 @@
     "dom-serializer" "^1.0.1"
     "domelementtype" "^2.2.0"
     "domhandler" "^4.2.0"
+
+"echarts@^5.2.2", "echarts@>=5.0.0":
+  "integrity" "sha512-yxuBfeIH5c+0FsoRP60w4De6omXhA06c7eUYBsC1ykB6Ys2yK5fSteIYWvkJ4xJVLQgCvAdO8C4mN6MLeJpBaw=="
+  "resolved" "https://registry.npmjs.org/echarts/-/echarts-5.2.2.tgz"
+  "version" "5.2.2"
+  dependencies:
+    "tslib" "2.3.0"
+    "zrender" "5.2.1"
 
 "ee-first@1.1.1":
   "integrity" "sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0="
@@ -4140,6 +4161,13 @@
   "integrity" "sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw=="
   "resolved" "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   "version" "2.6.2"
+
+"ngx-echarts@^8.0.1":
+  "integrity" "sha512-CP+WnCcnMCNpCL9BVmDIZmhGSVPnkJhhFbQEKt0nrwV0L6d4QTAGZ+e4y6G1zTTFKkIMPHpaO0nhtDRgSXAW/w=="
+  "resolved" "https://registry.npmjs.org/ngx-echarts/-/ngx-echarts-8.0.1.tgz"
+  "version" "8.0.1"
+  dependencies:
+    "tslib" "^2.3.0"
 
 "nice-napi@^1.0.2":
   "integrity" "sha512-px/KnJAJZf5RuBGcfD+Sp2pAKq0ytz8j+1NehvgIGFkvtvFrDM3T8E4x/JJODXK9WZow8RRGrbA9QQ3hs+pDhA=="
@@ -5917,6 +5945,11 @@
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.1.0.tgz"
   "version" "2.1.0"
 
+"tslib@2.3.0":
+  "integrity" "sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg=="
+  "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.0.tgz"
+  "version" "2.3.0"
+
 "type-fest@^0.21.3":
   "integrity" "sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w=="
   "resolved" "https://registry.npmjs.org/type-fest/-/type-fest-0.21.3.tgz"
@@ -6284,3 +6317,10 @@
   "version" "0.11.4"
   dependencies:
     "tslib" "^2.0.0"
+
+"zrender@5.2.1":
+  "integrity" "sha512-M3bPGZuyLTNBC6LiNKXJwSCtglMp8XUEqEBG+2MdICDI3d1s500Y4P0CzldQGsqpRVB7fkvf3BKQQRxsEaTlsw=="
+  "resolved" "https://registry.npmjs.org/zrender/-/zrender-5.2.1.tgz"
+  "version" "5.2.1"
+  dependencies:
+    "tslib" "2.3.0"

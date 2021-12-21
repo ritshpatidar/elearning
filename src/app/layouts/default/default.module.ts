@@ -23,6 +23,7 @@ import { AddcoursedetailsComponent } from 'src/app/modules/addcoursedetails/addc
 import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -52,6 +53,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatOptionModule,
     MatSelectModule,
     MatFormFieldModule,
+    YouTubePlayerModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     })
