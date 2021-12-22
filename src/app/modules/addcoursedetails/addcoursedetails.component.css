@@ -72,3 +72,13 @@
    color:gray;
    cursor: pointer;
  }
+
+
+.cardstyle{
+ height: 200px;
+ display: flex;
+ background-color: #E2E6EA;
+ align-items: center;
+ flex-direction: row;
+ justify-content: space-around;
+}
