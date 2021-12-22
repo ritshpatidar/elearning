@@ -37,10 +37,10 @@ const routes: Routes = [
   
   children : [{
     path:'', 
-    component: DashboardComponent
+    component: PostsComponent
   },{
-    path:'posts',
-    component: PostsComponent,
+    path:'dashboard',
+    component: DashboardComponent,
   },
   {
     path:'addcoursedetails/:name',

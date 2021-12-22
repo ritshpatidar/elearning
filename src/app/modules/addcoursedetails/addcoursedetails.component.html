@@ -5,14 +5,12 @@
         <div class="card" style="border-radius: 2rem;">
             
               <div class="card-body text-black">
-
-               <h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Add course content here</h5>
-  
+ 
 <mat-card class="mat-elevation-z4">
   <form [formGroup]="AddModuleForm">  
     
         <div class="form-outline mb-1">
-                    <label>Module Name:</label>
+                   <h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Module Name</h5>
                     <input 
                     type="text" 
                     name="modulename" 
@@ -22,6 +20,11 @@
                     class="form-control form-control-lg" 
                     placeholder ="Name of the Module"/>
                   </div>
+                  <br>
+         
+                  <mat-divider></mat-divider>
+
+                  <h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Add module content file</h5>
 
                      <div class="form-outline mb-1">
                     <input 
@@ -33,71 +36,72 @@
                     class="form-control form-control-lg" 
                     />
                   </div>
+                  <br>
+                   <mat-divider></mat-divider>
 
 
-
-    <table class="table table-bordered" formArrayName="links">  
+    <table class="table table-borderless table-hover" formArrayName="links">  
       <tr>  
-        <th colspan="2">Video Link:</th>  
-        <th width="100px"><button class="btn btn-dark btn-lg btn-block" (click)="addLink()" >Add new link</button></th>  
+        <th colspan="1"><h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Add Link</h5></th>  
+        <th width="100px">
       </tr>  
       <tr *ngFor="let quantity of links().controls; let i=index" [formGroupName]="i">  
         <td>  
-            Link address:  
-            <input type="text" formControlName="linkname" class="form-control">  
+            <input type="text" placeholder="link address" formControlName="linkname" class="form-control">  
         </td>  
-        <td>  
-            <button (click)="removeLink(i)" class="btn btn-danger">Remove</button>  
-        </td>  
+        <!-- <td>  
+            <button (click)="removeLink(i)" class="btn btn-danger">X</button>  
+        </td>   -->
       </tr> 
       
     </table> 
     
        <div class="pt-1 mb-3">
-                    <button (click)="onSubmit()" class="btn btn-dark btn-lg btn-block" style="font-size: 14px;" type="submit"  
+                    <button (click)="onSubmit()" class="btn btn-dark btn-lg btn-block" style="font-size: 12px; background-color: green;" type="submit"  
                     >Add module</button>
         </div>
   </form> 
 </mat-card>
 
-              </div>
+</div>
 
-<div class="container">  
-    <h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Current course content</h5>
-      
-       
+    <h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Current course content</h5>   
   <br/> 
-  <div *ngFor="let item of modules"> 
+ 
+<div class="content"> 
+  
+  <div fxLayout="row wrap" fxLayoutGap="12px grid">
+  
+  <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of modules"> 
+         <!-- data array from backend to ngFor  -->
   <mat-card class="mat-elevation-z4">
-    <mat-card-header style="display: flex; justify-content: space-between; flex-direction: row; align-items: center;">
+    <mat-card-header style="justify-content: space-between">
       <mat-card-title style="font-size: 16px;">{{item.module_name}}</mat-card-title><br>
       <mat-icon class="delete_icon" aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
     </mat-card-header>
 
-    <div class="cardstyle">
-      <div *ngIf="moduleLoaded" style="display: flex; align-items:center; flex-direction: column;">
-        <youtube-player
+      <div class="container-fluid" style="margin-left: 3vh; margin-right: -2vh;">
+          <youtube-player
           [videoId]="item.video_link"
-          [height]="100"
-          [width]="200"
+          [height]="150"
+          [width]="210"
           style="border-radius: 20px;"
         >
         </youtube-player>
-      </div>
+        <br>
+       
 
-      <div>
-        <a [href]="apiUrl+item.module_file" target="_blank">
-          <mat-icon class="file_icon" style="transform: scale(4);" color="primary" aria-hidden="false">insert_drive_file</mat-icon>
+           <a [href]="apiUrl+item.module_file" target="_blank">
+            <h4>click here to open module content</h4>
         </a>
-      </div>
-
-    </div>
-
+       </div>
+    
   </mat-card>
   
   <br><br>
   </div>
 </div>  
+</div>
         </div>
       </div>
 
