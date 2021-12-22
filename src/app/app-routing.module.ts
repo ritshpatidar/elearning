@@ -8,6 +8,7 @@ import { PostsComponent } from './modules/posts/posts.component';
 import { StudentComponent } from './layouts/student/student.component';
 import { StudenthomeComponent } from './modules/studenthome/studenthome.component';
 import { StudentcoursesComponent } from './modules/studentcourses/studentcourses.component';
+import { CoursedetailComponent } from './modules/coursedetail/coursedetail.component';
 
 
 
@@ -28,6 +29,10 @@ const routes: Routes = [
     path:'studentcourses', 
     component: StudentcoursesComponent
   },
+   {
+    path:'coursedetail/:name', 
+    component: CoursedetailComponent
+  },
 ]
 },
 
@@ -39,7 +44,7 @@ const routes: Routes = [
     path:'', 
     component: PostsComponent
   },{
-    path:'dashboard',
+    path:'admin',
     component: DashboardComponent,
   },
   {

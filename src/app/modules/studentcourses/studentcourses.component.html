@@ -1,1 +1,44 @@
  <h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Courses you've enrolled in are displayed here!</h5>
+
+
+  
+<div class="content">
+ <!-- <div *ngIf="!coursesFetched; else elseBlock">
+    <mat-spinner strokeWidth="10" diameter="40"></mat-spinner>
+
+
+    print "you are not enrolled to any courses yet,  Enroll to new courses and start learning" -->
+      
+
+  <!-- </div> --> 
+  <!-- <ng-template #elseBlock> -->
+
+  <div fxLayout="row wrap" fxLayoutGap="12px grid">
+  <!-- change here for enrolled status -->
+    <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of courses"> 
+         <!-- data array from backend to ngFor  -->
+         
+      <mat-card class="mat-elevation-z4">
+        <mat-card-header  routerLinkActive="list-item-active">
+                <mat-card-title>{{item.name}}</mat-card-title>
+        </mat-card-header>
+        
+        <!-- fetch image for each course here with nae -->
+        <img mat-card-image routerLinkActive="list-item-active"
+         class="thumbnail-image" src={{apiUrl+item.image}} onerror="this.src='assets/default.jpg';"  alt="..." />
+
+         <div class="row">
+         <div class="col-sm-6">    
+         <button type="button" style="font-size: 12px;" class="btn btn-outline-success">View course content</button>
+         </div>
+         <div class="col-sm-6"> 
+         <h5>Duration: [[]]</h5>
+         </div>
+        </div>
+      </mat-card>
+    </div>
+  
+  </div>
+  <!-- </ng-template> -->
+
+    </div>
