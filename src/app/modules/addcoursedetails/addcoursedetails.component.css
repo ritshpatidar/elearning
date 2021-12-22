@@ -4,7 +4,13 @@
     font-size: 12px;
 }
 
+.table .table-bordered{
+  border-color: grey;
+}
 
+.table .th{
+  color: #28A745;
+}
 
 .default {
   height: 100%;
@@ -46,13 +52,14 @@
 .btn-dark {
     background-color: grey;
     border: none;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .btn-danger {
  background-color: grey;
  border: none;
- font-size: 12px;
+ font-size: 10px;
+ margin-top: 10px;
  }
 
  .btn-danger:hover{
@@ -73,12 +80,34 @@
    cursor: pointer;
  }
 
+ .file_icon{
+   font-size: 24px;
+ }
 
 .cardstyle{
  height: 200px;
- display: flex;
- background-color: #E2E6EA;
- align-items: center;
  flex-direction: row;
  justify-content: space-around;
 }
+
+.table-borderless td,
+.table-borderless th {
+  border: 0;
+}
+
+.table-borderless td
+{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.new{
+  max-width: 200px;
+  max-height: 100px;
+}
+
+/* @media (min-width: 1024px) {
+  .div .container-fluid {
+   margin-left: 3vh;
+  }
+} */

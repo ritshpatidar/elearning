@@ -14,6 +14,7 @@ export class AddcoursedetailsComponent implements OnInit {
   AddModuleForm: FormGroup; 
   course_name:string = "";
   fileToUpload: File | null = null;  
+  gridColumns = 3;
   modules = [
     {module_name:"Loading", video_link:"ZgMw__KdjiI", module_file:""},
   ]
@@ -24,7 +25,7 @@ export class AddcoursedetailsComponent implements OnInit {
 
     this.AddModuleForm = this.fb.group({  
       modulename: '',  
-      links: this.fb.array([]) ,  
+      links: this.fb.array([0]) ,  
     });  
     
   } 
