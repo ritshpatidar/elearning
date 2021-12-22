@@ -1,5 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+import { GlobalConstants } from 'src/app/global-constants';
 
 @Component({
   selector: 'app-studentheader',
@@ -10,13 +12,18 @@ export class StudentheaderComponent implements OnInit {
 
     @Output() toggleSide = new EventEmitter<any>();
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-toggleSideBar() {
+  toggleSideBar() {
     this.toggleSide.emit();
+  }
+
+  signOut(){
+    localStorage.removeItem(GlobalConstants.authTokenKey);
+    this.router.navigate([""]);
   }
 
 }

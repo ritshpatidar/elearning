@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { AuthService } from '../../auth.service';
 import {GlobalConstants} from '../../../global-constants';
 import { Router } from '@angular/router';
+import { AppService } from 'src/app/dashboard_service/app.service';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private appService: AppService) { }
 
   ngOnInit(): void {
   }
@@ -31,9 +32,9 @@ export class RegisterComponent implements OnInit {
         console.log("Response Here");
         console.log(responseData);
         if(responseData.success){
-          localStorage.setItem(GlobalConstants.authTokenKey, responseData.token);
-          //route to dashboard
-          this.router.navigate(["dashboard"]);
+          localStorage.setItem(GlobalConstants.authTokenKey, responseData.results.token);
+          this.appService.setToken(responseData.results.token);
+          this.router.navigate(["student/home"]);
         } else {
           //show error
         }
