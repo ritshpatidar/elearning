@@ -5,21 +5,30 @@ import { GlobalConstants } from '../global-constants';
 
 @Injectable()
 export class AppService {
-
   constructor(private http: HttpClient) { }
 
+  private token = localStorage.getItem(GlobalConstants.authTokenKey);
   private apiUrl = GlobalConstants.apiURL;
-  private httpOptionsUrlEncoded = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Authorization': 'Bearer '+localStorage.getItem(GlobalConstants.authTokenKey)
-    })
+  httpOptionsUrlEncoded(){ 
+    return {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': 'Bearer '+localStorage.getItem(GlobalConstants.authTokenKey)
+      })
+    };
   };
-  private httpOptionsFormData = {
-    headers: new HttpHeaders({
-      'Authorization': 'Bearer '+localStorage.getItem(GlobalConstants.authTokenKey)
-    })
+
+  httpOptionsFormData(){
+    return {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer '+localStorage.getItem(GlobalConstants.authTokenKey)
+      })
+    }
   };
+
+  setToken(token:string){
+    this.token = token;
+  }
 
   addCourse(data:{
     active: boolean, 
@@ -39,7 +48,7 @@ export class AppService {
     body.append("category", data.category);
     body.append("duration",String(data.duration));
     body.append("image",data.image, data.image.name);
-    return this.http.post(this.apiUrl+"api/admin/addCourse",body,this.httpOptionsFormData);
+    return this.http.post(this.apiUrl+"api/admin/addCourse",body,this.httpOptionsFormData());
   }
 
   addModule(data:{
@@ -53,18 +62,31 @@ export class AppService {
     body.append("video_link",data.video_link);
     body.append("name",data.name)
     body.append("module_file",data.module_file, data.module_file.name);
-    return this.http.put(this.apiUrl+"api/admin/addModule",body,this.httpOptionsFormData);
+    return this.http.put(this.apiUrl+"api/admin/addModule",body,this.httpOptionsFormData());
   }
 
   getAllCourses():Observable<any>{
-    return this.http.get(this.apiUrl+"api/allCourses", this.httpOptionsUrlEncoded);
+    return this.http.get(this.apiUrl+"api/allCourses", this.httpOptionsUrlEncoded());
   }
 
   getCourse(course_name:string):Observable<any>{
-    return this.http.get(this.apiUrl+"api/getCourse/"+course_name,this.httpOptionsUrlEncoded);
+    return this.http.get(this.apiUrl+"api/getCourse/"+course_name,this.httpOptionsUrlEncoded());
+  }
+
+  getUser(username:string):Observable<any>{
+    return this.http.get(this.apiUrl+"api/getUser/"+username,this.httpOptionsUrlEncoded());
   }
 
   deleteCouse(id:string):Observable<any>{
-    return this.http.delete(this.apiUrl+"api/admin/deleteCourse/"+id,this.httpOptionsUrlEncoded);
+    return this.http.delete(this.apiUrl+"api/admin/deleteCourse/"+id,this.httpOptionsUrlEncoded());
+  }
+
+  isLoggedIn():Observable<any>{
+    return this.http.get(this.apiUrl+"isLoggedIn", this.httpOptionsUrlEncoded());
+  }
+
+  enrollCourse(data:{username:string, name: string}):Observable<any>{
+    let body = new HttpParams({fromObject:data});
+    return this.http.put(this.apiUrl+"api/student/enroll",body,this.httpOptionsUrlEncoded());
   }
 }

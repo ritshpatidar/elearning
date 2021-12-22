@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { AuthService } from '../../auth.service';
 import {GlobalConstants} from '../../../global-constants';
 import { Router } from '@angular/router';
+import { AppService } from 'src/app/dashboard_service/app.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private appService: AppService) { }
 
   ngOnInit(): void {
   }
@@ -29,8 +30,12 @@ export class LoginComponent implements OnInit {
         console.log(responseData);
         if(responseData.success){
           localStorage.setItem(GlobalConstants.authTokenKey, responseData.token);
-          //route to dashboard
-          this.router.navigate(["dashboard"]);
+          this.appService.setToken(responseData.token);
+          if(responseData.username === "admin_admin"){
+            this.router.navigate(["dashboard"]);
+          } else {
+              this.router.navigate(["student/home"]);
+          }
         } else {
           //show error
         }
