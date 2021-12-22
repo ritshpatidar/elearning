@@ -17,13 +17,16 @@ import {MatTableModule} from '@angular/material/table';
 import { RouterModule } from '@angular/router';
 import { StudenthomeComponent } from 'src/app/modules/studenthome/studenthome.component';
 import { StudentcoursesComponent } from 'src/app/modules/studentcourses/studentcourses.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
+import { CoursedetailComponent } from 'src/app/modules/coursedetail/coursedetail.component';
 
 
 @NgModule({
   declarations: [
     StudentComponent,
     StudenthomeComponent,
-    StudentcoursesComponent
+    StudentcoursesComponent,
+    CoursedetailComponent
   ],
   imports: [
     CommonModule,
@@ -41,8 +44,8 @@ import { StudentcoursesComponent } from 'src/app/modules/studentcourses/studentc
     ReactiveFormsModule,
     MatTableModule,
     RouterModule,
-    MatProgressSpinnerModule
-    
+    MatProgressSpinnerModule,
+    YouTubePlayerModule 
   ]
 })
 export class StudentModule { }

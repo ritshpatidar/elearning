@@ -71,6 +71,10 @@ export class AddcoursedetailsComponent implements OnInit {
   removeLink(i:number) {  
     this.links().removeAt(i);  
   }  
+
+   toggleGridColumns() {
+    this.gridColumns = this.gridColumns === 3 ? 4 : 3;
+  }
      
   onSubmit() {  
     console.log(this.AddModuleForm.value);  

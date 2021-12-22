@@ -73,3 +73,24 @@
   color: black;
 }
 
+.mat-card-image {
+  height: 15vh;
+  object-fit: cover;
+}
+
+.mat-card:hover {
+  background-color: #E2E6EA;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.content {
+  padding: 12px;
+}
+
+.content>mat-card {
+  margin-bottom: 12px;
+}
+
+.mat-card-title {
+  font-size: 16px;
+}
