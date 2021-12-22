@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/dashboard_service/app.service';
 import { GlobalConstants } from 'src/app/global-constants';
-
+import { ActivatedRoute } from '@angular/router'; 
 @Component({
   selector: 'app-coursedetail',
   templateUrl: './coursedetail.component.html',
   styleUrls: ['./coursedetail.component.css']
 })
 export class CoursedetailComponent implements OnInit {
-
+  course_name:string = "";
    gridColumns = 3;
    modules = [
     {module_name:"Loading", video_link:"ZgMw__KdjiI", module_file:""},
@@ -16,10 +16,12 @@ export class CoursedetailComponent implements OnInit {
   moduleLoaded = false;
   apiUrl = GlobalConstants.apiURL;
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService, private router : ActivatedRoute) { }
 
   ngOnInit(): void {
-
+    console.log(this.router.snapshot.params);
+    this.course_name = this.router.snapshot.params['name'];
+    this.getCourse(this.router.snapshot.params['name']);
   }
 
   getCourse(course_name: string){

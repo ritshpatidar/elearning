@@ -3,15 +3,10 @@
 
   
 <div class="content">
- <!-- <div *ngIf="!coursesFetched; else elseBlock">
+ <div *ngIf="!coursesFetched; else elseBlock">
     <mat-spinner strokeWidth="10" diameter="40"></mat-spinner>
-
-
-    print "you are not enrolled to any courses yet,  Enroll to new courses and start learning" -->
-      
-
-  <!-- </div> --> 
-  <!-- <ng-template #elseBlock> -->
+  </div> 
+  <ng-template #elseBlock>
 
   <div fxLayout="row wrap" fxLayoutGap="12px grid">
   <!-- change here for enrolled status -->
@@ -19,7 +14,7 @@
          <!-- data array from backend to ngFor  -->
          
       <mat-card class="mat-elevation-z4">
-        <mat-card-header  routerLinkActive="list-item-active">
+        <mat-card-header>
                 <mat-card-title>{{item.name}}</mat-card-title>
         </mat-card-header>
         
@@ -29,7 +24,7 @@
 
          <div class="row">
          <div class="col-sm-6">    
-         <button type="button" style="font-size: 12px;" class="btn btn-outline-success">View course content</button>
+         <button type="button"  routerLinkActive="list-item-active" routerLink="/student/coursedetail/{{item.name}}" style="font-size: 12px;" class="btn btn-outline-success">View course content</button>
          </div>
          <div class="col-sm-6"> 
          <h5>Duration: [[]]</h5>
@@ -39,6 +34,6 @@
     </div>
   
   </div>
-  <!-- </ng-template> -->
+  </ng-template>
 
     </div>

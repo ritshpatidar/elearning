@@ -1,5 +1,8 @@
- <h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Courses you've enrolled in are displayed here!</h5>
-<div class="content"> 
+ <div class="content"> 
+ <div *ngIf="!moduleLoaded; else elseBlock">
+    <mat-spinner strokeWidth="10" diameter="40"></mat-spinner>
+  </div> 
+  <ng-template #elseBlock>
   
   <div fxLayout="row wrap" fxLayoutGap="12px grid">
   
@@ -31,4 +34,5 @@
   <br><br>
   </div>
 </div>  
+</ng-template>
 </div>
