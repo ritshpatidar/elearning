@@ -10,7 +10,7 @@ import { GlobalConstants } from 'src/app/global-constants';
 })
 export class StudentcoursesComponent implements OnInit {
 title = 'Card View Demo';
-  courses = [{name:"", image:"", _id:""}];
+  courses = [{name:"", image:"", _id:"", duration:"20"}];
   coursesFetched = false;
   gridColumns = 3;
   apiUrl = GlobalConstants.apiURL;
@@ -22,11 +22,26 @@ title = 'Card View Demo';
   }
   
   getCourses(){
-    this.appService.getAllCourses().subscribe((res)=>{
-      console.log(res);
-      if(res.success){
-        this.courses = res.results;
-        this.coursesFetched=true;
+    this.appService.isLoggedIn().subscribe((_res)=>{
+      if(_res.success){
+        //_res.user.username
+        this.appService.getAllCourses().subscribe((res)=>{
+          console.log(res);
+          if(res.success){
+            let temp:any[] = [];
+            res.results.forEach((val:any) => {
+              if(val.students_enrolled.indexOf(_res.user.username) > -1){
+                temp.push(val);
+              }
+            });
+            this.courses = temp;
+            this.coursesFetched=true;
+          } else {
+            alert("Something went wrong");
+          }
+        });
+      } else {
+        alert("Something went wrong, may be user not found");
       }
     });
   }
