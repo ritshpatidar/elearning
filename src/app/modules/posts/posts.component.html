@@ -1,22 +1,22 @@
-
-<!-- <mat-toolbar color="primary"> -->
-  <button mat-button (click)="toggleGridColumns()" fxHide.lt-md>
-    <!-- <span *ngIf="gridColumns === 4">Three Columns</span>
-    <span *ngIf="gridColumns === 3">Four Columns</span> -->
+<button mat-button (click)="toggleGridColumns()" fxHide.lt-md>
   </button>
 <!-- </mat-toolbar> -->
 <div class="content">
-
 <div class="row" style="margin-bottom: 10px;">
  <div class="col-sm-9">
-       <h3>Active Courses</h3>
-       <h5>click on the course to add course data</h5>
+       <h2>Active Courses</h2>
+       <h4>click on the course card to add new modules to the course</h4>
   </div>
 
    <div class="col-sm" style="justify-content: space-between;">
      <button mat-raised-button (click)="onRefresh()" style="margin-right: 20px;" role="button">Refresh</button>
      <button mat-raised-button (click)="onCreate()" role="button">+ Add New</button>
   </div>
+
+    <nav class="navbar">
+    <input class="form-control" type = "text" name="name" [(ngModel)]="name" (ngModelChange)="search()" 
+    placeholder="Search for a course">
+  </nav>
 
   </div>
 

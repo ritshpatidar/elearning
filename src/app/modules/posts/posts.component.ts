@@ -14,6 +14,7 @@ export class PostsComponent implements OnInit {
   title = 'Card View Demo';
   courses = [{name:"", image:"", _id:""}];
   coursesFetched = false;
+  name: any;
   gridColumns = 3;
   constructor(public dialog: MatDialog, private appService: AppService) { }
 
@@ -58,4 +59,15 @@ export class PostsComponent implements OnInit {
     this.getCourses();
   }
 
+  search(){
+    if(this.name ==""){
+      this.ngOnInit();
+
+    }
+    else{
+      this.courses = this.courses.filter(res =>{
+        return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase())
+      });
+    }
+  }
 }

@@ -16,7 +16,7 @@
 .newfont{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 4rem;
-  font-size: 40px;
+  font-size: 6vh;
   font-weight: 600;
   color: black;
 }
@@ -25,7 +25,7 @@
    font-family:
    'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    line-height: 1rem;
-   font-size: 18px;
+   font-size: 3vh;
    font-weight: 200;
    color:#7A7E83;
 }
