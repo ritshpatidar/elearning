@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './auth/auth.service';
+import { AppService } from './dashboard_service/app.service';
 import {GlobalConstants} from './global-constants';
 
 @Component({
@@ -11,16 +12,23 @@ import {GlobalConstants} from './global-constants';
 export class AppComponent {
   title = 'elearning';
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private appService: AppService){}
 
   ngOnInit(): void {
     let authToken = localStorage.getItem(GlobalConstants.authTokenKey);
     console.log("Token:"+authToken);
     if(authToken){
-      //logged in
-      //optional check using api /isLoggedIn, pass authorization token, it will return user data
-      //send user to admin dashboard if username is admin, otherwise send it to student dashboard
-      this.router.navigate(["dashboard"]);
+      this.appService.isLoggedIn().subscribe((res)=>{
+        if(res.success){
+          if(res.user.username === "admin_admin"){
+            this.router.navigate(["dashboard"]);
+          } else {
+            this.router.navigate(["student/home"]);
+          }
+        } else {
+          alert("Something went wrong, may be user not found");
+        }
+      });
     } else {
       //not logged in, send user to login page
     }

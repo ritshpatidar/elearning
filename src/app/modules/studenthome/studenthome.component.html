@@ -26,9 +26,9 @@
         
         <!-- fetch image for each course here with nae -->
         <img mat-card-image routerLinkActive="list-item-active"
-         class="thumbnail-image" src={{item.image}} onerror="this.src='assets/default.jpg';"  alt="..." />
+         class="thumbnail-image" src={{apiUrl+item.image}} onerror="this.src='assets/default.jpg';"  alt="..." />
 
-         <button type="button" class="btn btn-outline-success">Enroll</button>
+         <button type="button" (click)="enrollCourse(item.name)" class="btn btn-outline-success">Enroll</button>
    
       </mat-card>
     </div>
