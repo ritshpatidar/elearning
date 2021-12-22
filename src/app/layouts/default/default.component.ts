@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DefaultComponent implements OnInit {
 
-  SideBarOpen = true;
+  SideBarOpen = false;
 
   constructor() { }
 
