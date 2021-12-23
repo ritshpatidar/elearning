@@ -25,7 +25,7 @@ export class AddcoursedetailsComponent implements OnInit {
 
     this.AddModuleForm = this.fb.group({  
       modulename: '',  
-      links: this.fb.array([0]) ,  
+      linkname: '',  
     });  
     
   } 
@@ -80,7 +80,7 @@ export class AddcoursedetailsComponent implements OnInit {
     console.log(this.AddModuleForm.value);  
     let data = {
       name: this.course_name,
-      video_link: this.AddModuleForm.value.links[0].linkname,
+      video_link: this.AddModuleForm.value.linkname,
       module_name: this.AddModuleForm.value.modulename,
       module_file: this.fileToUpload
     }
