@@ -45,23 +45,18 @@
                   </div>
                   <br>
                    <mat-divider></mat-divider>
-
-
-    <table class="table table-borderless table-hover" formArrayName="links">  
-      <tr>  
-        <th colspan="1"><h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Add Link</h5></th>  
-        <th width="100px">
-      </tr>  
-      <tr *ngFor="let quantity of links().controls; let i=index" [formGroupName]="i">  
-        <td>  
-            <input type="text" placeholder="link address" formControlName="linkname" class="form-control">  
-        </td>  
-        <!-- <td>  
-            <button (click)="removeLink(i)" class="btn btn-danger">X</button>  
-        </td>   -->
-      </tr> 
-      
-    </table> 
+                   <div class="form-outline mb-1">
+                    <h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Video Link</h5>
+                     <input 
+                     type="text" 
+                     name="linkname" 
+                     required 
+                     id="linkname" 
+                     formControlName="linkname"
+                     class="form-control form-control-lg" 
+                     placeholder ="Video Link Here"/>
+                   </div>
+                   <br>
     
        <div class="pt-1 mb-3">
                     <button (click)="onSubmit()" class="btn btn-dark btn-lg btn-block" style="font-size: 12px; background-color: green;" type="submit"  
@@ -86,7 +81,7 @@
   <mat-card class="mat-elevation-z4">
     <mat-card-header style="justify-content: space-between">
       <mat-card-title style="font-size: 16px;">{{item.module_name}}</mat-card-title><br>
-      <mat-icon class="delete_icon" aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+      <mat-icon style="display: none;" class="delete_icon" aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
     </mat-card-header>
 
       <div class="container-fluid" style="margin-left: 4vh;">
