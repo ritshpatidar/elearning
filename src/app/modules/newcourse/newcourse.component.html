@@ -24,20 +24,18 @@
           class="form-control">  
     </p>
 
-  
-        <p>  
-          <label for="duration">Duration in hours:</label>  
-          <input 
-            matInput
-            type="number" 
-            formControlName="duration"
-            min="1" 
-            id="duration"
-            name="duration" 
-            class="form-control">  
-        </p>  
+    <p>
+        <mat-form-field appearance="fill">
+          <mat-label for="type">Type of course</mat-label>
+          <mat-select id="type" formControlName="type">
+            <mat-option value="Tech">Technical</mat-option>
+            <mat-option value="NonTech">Non-Technical</mat-option>
+            <mat-option value="Other">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+    </p>
 
-        <div class="form-outline">
+    <div class="form-outline">
           <label for="img">Upload course image</label>  
                     <input 
                     type="file" #imageInput
@@ -49,23 +47,21 @@
                     class="form-control form-control-lg" 
                     accept="image/*"
                     />
-         </div>
+    </div>
+  
+    <p>  
+          <label for="duration">Duration in hours:</label>  
+          <input 
+            matInput
+            type="number" 
+            formControlName="duration"
+            min="1" 
+            id="duration"
+            name="duration" 
+            class="form-control">  
+    </p>  
 
-        <p>
-        <mat-form-field appearance="fill">
-          <mat-label for="type">Type of course</mat-label>
-          <mat-select id="type" formControlName="type">
-            <mat-option value="Tech">Technical</mat-option>
-            <mat-option value="NonTech">Non-Technical</mat-option>
-            <mat-option value="Other">Other</mat-option>
-          </mat-select>
-        </mat-form-field>
-        </p>
-
-     
-     
-
-    <button  type="submit" class="btn1">Submit</button>  
+    <button type="submit" mat-raised-button style="background-color: #28A745; color: #ffff;">Submit</button>  
       
   </form>  
 
