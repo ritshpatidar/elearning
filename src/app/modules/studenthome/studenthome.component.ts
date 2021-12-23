@@ -15,6 +15,7 @@ export class StudenthomeComponent implements OnInit {
   coursesFetched = false;
   gridColumns = 3;
   apiUrl = GlobalConstants.apiURL;
+  name: any;
 
   constructor(public dialog: MatDialog, private appService: AppService) { }
 
@@ -73,6 +74,18 @@ export class StudenthomeComponent implements OnInit {
         alert("Something went wrong");
       }
     });
+  }
+
+  search(){
+    if(this.name ==""){
+      this.ngOnInit();
+
+    }
+    else{
+      this.courses = this.courses.filter(res =>{
+        return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase())
+      });
+    }
   }
 
 }

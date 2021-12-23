@@ -6,7 +6,12 @@
     </div>
   </section>
 
-    <h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 2rem;">Suggested learning</h5>
+    <h5 class="newfont" style="letter-spacing: 0.5px; font-size: 14px;  line-height: 1rem;">Suggested learning</h5>
+
+      <nav class="navbar">
+        <input class="form-control" type = "text" name="name" [(ngModel)]="name" (ngModelChange)="search()" 
+        placeholder="Search for a course">
+      </nav>
 
  
 <div class="content">
