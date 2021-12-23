@@ -16,7 +16,7 @@
 .newfont{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 4rem;
-  font-size: 40px;
+  font-size: 6vh;
   font-weight: 600;
   color: black;
 }
@@ -25,7 +25,7 @@
    font-family:
    'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    line-height: 1rem;
-   font-size: 18px;
+   font-size: 3vh;
    font-weight: 200;
    color:#7A7E83;
 }
@@ -90,4 +90,25 @@
 .scrolled-offset {
   margin-top: 70px;
 }
+
+@media (max-width: 992px) {
+  .newfont {
+    font-size: 20px;
+    line-height: 2rem;
+  }
+  .font{
+    font-size: 12px;
+  }
+  .test{
+    margin-top: none;
+  }
+  .img{
+    width:"50%";
+  }
+}
+
+.fit {
+  padding-top: 20px;
+}
+
 

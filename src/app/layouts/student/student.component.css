@@ -12,6 +12,11 @@ mat-drawer-container {
   height: 100%
 }
 
+@media (max-width: 992px) {
+  mat-drawer {
+    width: 500px
+  }
+}
 
 mat-drawer-content {
   padding: 20px;
