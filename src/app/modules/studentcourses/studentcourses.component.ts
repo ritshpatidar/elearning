@@ -56,6 +56,7 @@ title = 'Card View Demo';
   }
 
   enrollCourse(course_name:string){
+    console.log(course_name);
     this.appService.isLoggedIn().subscribe((_res)=>{
       console.log(_res);
       if(_res.success){

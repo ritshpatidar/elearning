@@ -42,6 +42,7 @@ export class StudenthomeComponent implements OnInit {
   }
 
   enrollCourse(course_name:string){
+    console.log(course_name);
     this.appService.isLoggedIn().subscribe((_res)=>{
       console.log(_res);
       if(_res.success){
@@ -53,6 +54,7 @@ export class StudenthomeComponent implements OnInit {
               alert("User already enrolled to this course");
             } else {
               console.log("Can be enrolled");
+              console.log({username:_res.user.username,name:course_name});
               this.appService.enrollCourse({username:_res.user.username,name:course_name})
               .subscribe((__res)=>{
                 console.log(__res);
