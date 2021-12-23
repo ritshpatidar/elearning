@@ -90,6 +90,7 @@ export class AddcoursedetailsComponent implements OnInit {
       console.log(res);
       if(res.success){
         //close pop up
+        this.getCourse(this.course_name);
         alert("Module created successfully");
       } else {
         alert("Something went wrong");
